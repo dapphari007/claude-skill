@@ -2,7 +2,7 @@
 
 > **create-react-app, but for Claude Code skills.** Scaffold, validate, and share agent skills — one `npx` away.
 
-[![npm version](https://img.shields.io/npm/v/create-claude-skill.svg)](https://www.npmjs.com/package/create-claude-skill) [![CI](https://github.com/dapphari007/claude-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/dapphari007/claude-skill/actions/workflows/ci.yml) [![npm downloads](https://img.shields.io/npm/dm/create-claude-skill.svg)](https://www.npmjs.com/package/create-claude-skill) [![license: MIT](https://img.shields.io/npm/l/create-claude-skill.svg)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/create-claude-skill.svg)](https://www.npmjs.com/package/create-claude-skill) [![CI](https://github.com/dapphari007/claude-skill/actions/workflows/ci.yml/badge.svg)](https://github.com/dapphari007/claude-skill/actions/workflows/ci.yml) [![license: MIT](https://img.shields.io/npm/l/create-claude-skill.svg)](LICENSE)
 
 ## Demo
 
