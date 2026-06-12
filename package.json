@@ -50,10 +50,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dapphari007/create-claude-skill.git"
+    "url": "git+https://github.com/dapphari007/claude-skill.git"
   },
-  "homepage": "https://github.com/dapphari007/create-claude-skill#readme",
+  "homepage": "https://github.com/dapphari007/claude-skill#readme",
   "bugs": {
-    "url": "https://github.com/dapphari007/create-claude-skill/issues"
+    "url": "https://github.com/dapphari007/claude-skill/issues"
   }
 }
