@@ -11,7 +11,7 @@ import { tmpdir } from 'node:os';
 import { basename, join } from 'node:path';
 import pc from 'picocolors';
 import { skillsDir, type Scope } from '../core/locations.js';
-import { resolveSource } from '../core/registry.js';
+import { fetchRegistry, lookupRegistry, resolveSource } from '../core/registry.js';
 import { validate } from './validate.js';
 
 function flag(args: string[], name: string): string | undefined {
@@ -28,10 +28,30 @@ export async function add(args: string[]): Promise<void> {
   }
   const scope = (flag(args, 'scope') ?? 'user') as Scope;
   const dest = skillsDir(scope);
-  const source = resolveSource(src);
+  let source = resolveSource(src);
 
   let cleanup: (() => void) | null = null;
   try {
+    // Registry name → resolve to its concrete github/local source via the community index.
+    if (source.kind === 'registry') {
+      console.log(pc.dim(`looking up "${source.name}" in the community registry…`));
+      const entry = lookupRegistry(await fetchRegistry(), source.name);
+      if (!entry) {
+        console.error(
+          pc.red(`"${source.name}" isn't in the registry yet — use \`add github:user/repo\`, or contribute it with \`pack\`.`),
+        );
+        process.exitCode = 1;
+        return;
+      }
+      source = resolveSource(entry.source);
+      if (source.kind === 'registry') {
+        console.error(pc.red(`registry entry for "${src}" must point to a github/local source, not another name.`));
+        process.exitCode = 1;
+        return;
+      }
+      console.log(pc.dim(`registry → ${entry.source}`));
+    }
+
     let srcDir: string;
     let name: string;
 
@@ -48,7 +68,7 @@ export async function add(args: string[]): Promise<void> {
       srcDir = source.path ? join(tmp, source.path) : tmp;
       name = source.path ? basename(source.path) : (source.repo.split('/').pop() ?? 'skill');
     } else {
-      console.error(pc.red('Registry install lands in v0.3 — use github:user/repo or a local path for now.'));
+      console.error(pc.red(`Unsupported source: ${src}`));
       process.exitCode = 1;
       return;
     }

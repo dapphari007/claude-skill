@@ -58,8 +58,8 @@ npx create-claude-skill doctor
 | `claude-skill validate [path]` | Lint frontmatter (schema), score **triggerability**, flag anti-patterns. |
 | `claude-skill doctor` | Diagnose installed skills: duplicates, conflicts, load issues. |
 | `claude-skill list` | List skills in `~/.claude/skills` + `./.claude/skills` with their triggers. |
-| `claude-skill add <src>` | Install a skill from `github:user/repo`, a local path, or the registry. |
-| `claude-skill pack [path]` | Bundle a skill (tarball) or publish for sharing. |
+| `claude-skill add <src>` | Install a skill from `github:user/repo`, a local path, or a registry `<name>`. |
+| `claude-skill pack [path]` | Validate, write a portable tarball, and print the `registry.json` entry to PR. |
 
 ## What a skill looks like
 
@@ -80,8 +80,38 @@ auto-trigger — and tells you exactly how to sharpen it.
 
 - **v0.1** — `new` + `validate` + `list` (the authoring loop) ✓
 - **v0.2** — `doctor` + `add` ✓
-- **v0.3** — `pack`/publish + a community `registry.json` (the flywheel)
+- **v0.3** — `pack` + a community `registry.json` (the flywheel) ✓
 - **v1.0** — skill **evals** (`claude-skill test`) — prove a skill works
+
+## Share a skill
+
+Built something useful? Get it into the community registry so anyone can `add` it by name:
+
+```bash
+npx create-claude-skill pack path/to/your-skill   # validates + prints a registry entry
+# paste the entry into registry.json, open a PR — then:
+npx create-claude-skill add your-skill
+```
+
+## FAQ
+
+**Why not just write `SKILL.md` by hand?** You can — but nothing tells you when a skill silently
+won't auto-trigger because its `description` is too vague. `validate`'s triggerability score is the
+missing feedback loop, and `new`/`doctor`/`add` remove the rest of the busywork.
+
+**Does it work outside Claude Code?** Yes. It operates on the `SKILL.md` convention (frontmatter +
+markdown body), so it works for any agent that loads skills that way — not just Claude Code.
+
+**What's the "triggerability" score?** A 0–100 estimate of how reliably a skill's `description` will
+match and fire: it rewards specific trigger conditions and concrete keywords, and penalizes vague
+filler (`helper`, `utility`, `various`). It's a heuristic to catch the common failure, not a guarantee.
+
+**Will it touch my existing skills?** Only when you ask. `validate`/`list`/`doctor` are read-only;
+`new`/`add` write to `~/.claude/skills` (user scope) or `./.claude/skills` (project scope), and `add`
+refuses to overwrite without `--force`.
+
+**Is it safe to run?** It's a tiny, MIT, two-dependency CLI. `add github:…` does a shallow clone into a
+temp dir, then validates before installing. No telemetry.
 
 ## Install
 
@@ -91,8 +121,8 @@ npm i -g create-claude-skill      # or just use npx
 
 ## Contributing
 
-Skills and command improvements welcome — see `skills/` for examples and `src/commands/` for the CLI.
-PRs add skills to the registry.
+PRs welcome — add a skill to the registry or improve the CLI. See [CONTRIBUTING.md](CONTRIBUTING.md)
+for the registry flow and dev setup; `skills/` has a worked example and `src/commands/` is the CLI.
 
 ## License
 

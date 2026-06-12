@@ -1,0 +1,9 @@
+{
+  "skills": {
+    "escalate-smart": {
+      "source": "github:dapphari007/claude-skill/skills/escalate-smart",
+      "description": "Decide when an autonomous agent should pause and ask a human vs. proceed on its own. Use when building autonomous/overnight agents, designing escalation policies, or deciding which actions are high-impact enough to require approval.",
+      "author": "dapphari007"
+    }
+  }
+}
