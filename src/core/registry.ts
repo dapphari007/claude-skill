@@ -13,11 +13,10 @@ export type SkillSource =
 
 export function resolveSource(src: string): SkillSource {
   if (src.startsWith('github:')) {
-    const [repo, ...rest] = src.slice('github:'.length).split('/').reduce<[string, string[]]>(
-      (acc, part, i) => (i < 2 ? [acc[0] ? `${acc[0]}/${part}` : part, acc[1]] : [acc[0], [...acc[1], part]]),
-      ['', []],
-    );
-    return { kind: 'github', repo, ...(rest.length ? { path: rest.join('/') } : {}) };
+    const parts = src.slice('github:'.length).split('/').filter(Boolean);
+    const repo = parts.slice(0, 2).join('/');
+    const path = parts.slice(2).join('/');
+    return path ? { kind: 'github', repo, path } : { kind: 'github', repo };
   }
   if (src.startsWith('.') || src.startsWith('/') || /^[a-zA-Z]:[\\/]/.test(src)) {
     return { kind: 'local', path: src };

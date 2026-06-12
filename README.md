@@ -79,8 +79,8 @@ auto-trigger — and tells you exactly how to sharpen it.
 
 ## Roadmap
 
-- **v0.1** — `new` + `validate` + `list` (the authoring loop)
-- **v0.2** — `doctor` + `add`
+- **v0.1** — `new` + `validate` + `list` (the authoring loop) ✓
+- **v0.2** — `doctor` + `add` ✓
 - **v0.3** — `pack`/publish + a community `registry.json` (the flywheel)
 - **v1.0** — skill **evals** (`claude-skill test`) — prove a skill works
 

@@ -1,6 +1,6 @@
 {
   "name": "create-claude-skill",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Create, validate, and share Claude Code (Agent) skills — create-react-app for skills.",
   "type": "module",
   "bin": {
