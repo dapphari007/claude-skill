@@ -1,0 +1,41 @@
+{
+  "name": "create-claude-skill",
+  "version": "0.1.0",
+  "description": "Create, validate, and share Claude Code (Agent) skills — create-react-app for skills.",
+  "type": "module",
+  "bin": {
+    "create-claude-skill": "./dist/cli.js",
+    "claude-skill": "./dist/cli.js"
+  },
+  "files": ["dist", "src/templates", "skills", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/cli.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "skills",
+    "agent",
+    "agent-skills",
+    "cli",
+    "scaffold",
+    "ai"
+  ],
+  "license": "MIT",
+  "author": "dapphari007",
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "picocolors": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0",
+    "vitest": "^1.6.0"
+  }
+}
