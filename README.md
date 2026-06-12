@@ -6,8 +6,7 @@
 
 ## Demo
 
-<!-- After recording, uncomment the next line and it becomes the hero image: -->
-<!-- ![create-claude-skill demo](demo.gif) -->
+![create-claude-skill — catches a vague description (30/100) and rewards a sharp one (95/100)](demo.svg)
 
 ```console
 $ create-claude-skill new payment-flow --description "a helper for various stuff"

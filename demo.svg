@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 392" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">
+  <rect x="0" y="0" width="840" height="392" rx="12" fill="#1e1e2e"/>
+  <rect x="0" y="0" width="840" height="40" rx="12" fill="#181825"/>
+  <rect x="0" y="28" width="840" height="12" fill="#181825"/>
+  <circle cx="22" cy="20" r="6" fill="#f38ba8"/>
+  <circle cx="44" cy="20" r="6" fill="#f9e2af"/>
+  <circle cx="66" cy="20" r="6" fill="#a6e3a1"/>
+  <text x="420" y="25" text-anchor="middle" fill="#6c7086" font-size="13">create-claude-skill</text>
+
+  <text x="24" y="74"><tspan fill="#89b4fa">$ </tspan><tspan fill="#cdd6f4">create-claude-skill new payment-flow </tspan><tspan fill="#6c7086">--description "a helper for various stuff"</tspan></text>
+  <text x="24" y="100"><tspan fill="#a6e3a1">✓ </tspan><tspan fill="#cdd6f4">created payment-flow/SKILL.md</tspan></text>
+  <text x="24" y="124"><tspan fill="#cdd6f4">  triggerability </tspan><tspan fill="#f38ba8" font-weight="bold">30/100</tspan></text>
+  <text x="24" y="148"><tspan fill="#f9e2af">    → </tspan><tspan fill="#bac2de">Add specific trigger conditions — what task should activate this?</tspan></text>
+  <text x="24" y="172"><tspan fill="#f9e2af">    → </tspan><tspan fill="#bac2de">Name concrete keywords a user would actually type.</tspan></text>
+  <text x="24" y="196"><tspan fill="#f9e2af">    → </tspan><tspan fill="#bac2de">Replace vague words (helper / utility / various).</tspan></text>
+
+  <text x="24" y="246"><tspan fill="#89b4fa">$ </tspan><tspan fill="#cdd6f4">create-claude-skill validate skills/escalate-smart</tspan></text>
+  <text x="24" y="272"><tspan fill="#a6e3a1">  ✓ </tspan><tspan fill="#cdd6f4">frontmatter looks good</tspan></text>
+  <text x="24" y="298"><tspan fill="#cdd6f4">  Triggerability </tspan><tspan fill="#a6e3a1" font-weight="bold">95/100 </tspan><tspan fill="#a6e3a1">██████████</tspan></text>
+  <text x="24" y="322"><tspan fill="#a6e3a1">    ✓ </tspan><tspan fill="#bac2de">this description should auto-trigger reliably</tspan></text>
+
+  <text x="24" y="364" fill="#6c7086" font-size="13">npx create-claude-skill new my-skill</text>
+</svg>

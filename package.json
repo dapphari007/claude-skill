@@ -12,7 +12,8 @@
     "src/templates",
     "skills",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "demo.svg"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -45,5 +46,13 @@
     "tsx": "^4.16.0",
     "typescript": "^5.5.0",
     "vitest": "^1.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dapphari007/create-claude-skill.git"
+  },
+  "homepage": "https://github.com/dapphari007/create-claude-skill#readme",
+  "bugs": {
+    "url": "https://github.com/dapphari007/create-claude-skill/issues"
   }
 }
