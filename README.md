@@ -4,7 +4,25 @@
 
 [![CI](https://img.shields.io/badge/CI-passing-brightgreen)](#) [![npm](https://img.shields.io/badge/npm-create--claude--skill-blue)](#) [![license](https://img.shields.io/badge/license-MIT-green)](#)
 
-<!-- TODO: 10-second demo GIF here — the single biggest driver of stars. -->
+## Demo
+
+<!-- After recording, uncomment the next line and it becomes the hero image: -->
+<!-- ![create-claude-skill demo](demo.gif) -->
+
+```console
+$ create-claude-skill new payment-flow --description "a helper for various stuff"
+✓ created payment-flow/SKILL.md
+  triggerability 30/100
+    → Add specific trigger conditions — what task/keywords should activate this?
+    → Name concrete keywords/verbs a user would actually type for this task.
+    → Replace vague words (helper/utility/various) with the precise capability.
+
+$ create-claude-skill validate skills/escalate-smart
+  ✓ frontmatter looks good
+  Triggerability 95/100 ██████████  ✓ this description should auto-trigger reliably
+```
+
+> Record the GIF in one command: install [VHS](https://github.com/charmbracelet/vhs), then run `vhs demo.tape`.
 
 Agent **skills** (a `SKILL.md` + optional bundled resources, loaded from `~/.claude/skills/` or a
 project's `.claude/skills/`) are powerful — but today you author them by hand with **zero tooling**.
