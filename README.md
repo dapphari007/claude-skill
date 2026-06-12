@@ -6,7 +6,7 @@
 
 ## Demo
 
-![create-claude-skill — catches a vague description (30/100) and rewards a sharp one (95/100)](demo.svg)
+![create-claude-skill — catches a vague description (30/100) and rewards a sharp one (95/100)](demo.gif)
 
 ```console
 $ create-claude-skill new payment-flow --description "a helper for various stuff"
@@ -21,7 +21,7 @@ $ create-claude-skill validate skills/escalate-smart
   Triggerability 95/100 ██████████  ✓ this description should auto-trigger reliably
 ```
 
-> Record the GIF in one command: install [VHS](https://github.com/charmbracelet/vhs), then run `vhs demo.tape`.
+> The triggerability score in action — vague vs. sharp. Regenerate with `node scripts/make-gif.mjs`.
 
 Agent **skills** (a `SKILL.md` + optional bundled resources, loaded from `~/.claude/skills/` or a
 project's `.claude/skills/`) are powerful — but today you author them by hand with **zero tooling**.

@@ -1,6 +1,6 @@
 {
   "name": "create-claude-skill",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Create, validate, and share Claude Code (Agent) skills — create-react-app for skills.",
   "type": "module",
   "bin": {
@@ -13,6 +13,7 @@
     "skills",
     "README.md",
     "LICENSE",
+    "demo.gif",
     "demo.svg"
   ],
   "scripts": {
